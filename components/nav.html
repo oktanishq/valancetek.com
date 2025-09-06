@@ -1,0 +1,27 @@
+<!-- ===========================================
+    NAVIGATION COMPONENT
+    ===========================================
+    Reusable navigation bar with logo, menu, and mobile toggle
+-->
+
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <a href="/index.html" aria-label="Valance Tek Home">
+        <img src="../assets/4k Tran_logo.png" alt="Valance Technologies Logo" class="nav-logo-img" loading="eager">
+        <img src="../assets/White Text.png" alt="Valance Technologies Text" class="nav-text-img" loading="eager">
+      </a>
+    </div>
+    <div class="nav-right">
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="nav-toggle">
+        <span aria-hidden="true">☰</span>
+      </button>
+    </div>
+    <ul class="nav-menu" id="nav-menu" role="menubar">
+       <li role="none"><a href="/index.html" role="menuitem">Home</a></li>
+       <li role="none"><a href="/pages/about.html" role="menuitem">About</a></li>
+       <li role="none"><a href="/pages/services.html" role="menuitem">Services</a></li>
+       <li role="none"><a href="/pages/contact.html" role="menuitem">Contact</a></li>
+     </ul>
+  </div>
+</nav>

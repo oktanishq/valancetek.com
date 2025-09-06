@@ -1,0 +1,23 @@
+# Valance Tek - Robots.txt
+# ========================
+# Instructions for web crawlers (search engines)
+
+User-agent: *
+Allow: /
+
+# Disallow access to admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+
+# Allow access to important directories
+Allow: /styles/
+Allow: /js/
+Allow: /assets/
+Allow: /pages/
+
+# Sitemap location
+Sitemap: https://valancetek.com/sitemap.xml
+
+# Crawl delay (optional - prevents overloading server)
+Crawl-delay: 1

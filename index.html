@@ -1,0 +1,484 @@
+<!-- ===========================================
+    VALANCE TECHNOLOGIES - HOMEPAGE
+    ===========================================
+    Main landing page showcasing company services, testimonials, and contact information
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <title>Valance Tek - Innovating the Future of Technology</title>
+  <meta name="description" content="Valance Tek delivers cutting-edge solutions for B2B and B2C clients, driving growth and efficiency through innovation.">
+  <meta name="keywords" content="web development, mobile apps, cloud solutions, digital marketing, technology consulting, software development">
+  <meta name="author" content="Valance Tek">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph Meta Tags for Social Sharing -->
+  <meta property="og:title" content="Valance Tek - Innovating the Future of Technology">
+  <meta property="og:description" content="Leading technology solutions provider for B2B and B2C clients">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#00c250">
+
+  <!-- Performance Optimizations -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="stylesheet" href="styles/style.css?v=20241205">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png?v=1">
+
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="styles/style.css" as="style">
+  <link rel="preload" href="js/main.js" as="script">
+  <link rel="preload" href="assets/4k Tran_logo.png" as="image">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5634EG3SXB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5634EG3SXB', {
+      'custom_map': {'dimension1': 'page_type'},
+      'send_page_view': true,
+      'allow_google_signals': true,
+      'allow_ad_personalization_signals': true
+    });
+
+    // Track user engagement metrics
+    gtag('event', 'page_view', {
+      'page_title': 'Valance Tek - Home',
+      'page_location': window.location.href,
+      'custom_parameter_1': 'home_page'
+    });
+
+    // Track mobile usage
+    if (window.innerWidth <= 768) {
+      gtag('event', 'mobile_user', {
+        'event_category': 'engagement',
+        'event_label': 'mobile_device'
+      });
+    }
+
+    // Track session duration
+    let sessionStart = Date.now();
+    window.addEventListener('beforeunload', function() {
+      let sessionDuration = Math.round((Date.now() - sessionStart) / 1000);
+      gtag('event', 'session_duration', {
+        'event_category': 'engagement',
+        'event_label': 'session_time',
+        'value': sessionDuration
+      });
+    });
+
+    // Track social engagement
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.social-link')) {
+        gtag('event', 'social_click', {
+          'event_category': 'social',
+          'event_label': e.target.closest('.social-link').textContent.trim()
+        });
+      }
+    });
+
+    // Track lead quality (form interactions)
+    document.addEventListener('focus', function(e) {
+      if (e.target.matches('input, textarea')) {
+        gtag('event', 'form_interaction', {
+          'event_category': 'lead_generation',
+          'event_label': e.target.name || e.target.id
+        });
+      }
+    });
+  </script>
+</head>
+<body class="page-transition">
+  <!-- ===========================================
+        SITE NAVIGATION
+        ===========================================
+        Dynamic navigation bar loaded via JavaScript for consistency across all pages
+   -->
+   <div id="dynamic-navbar-placeholder" style="display: none;"></div>
+
+
+  <!-- ===========================================
+       MAIN CONTENT
+       ===========================================
+       Primary content sections of the homepage
+  -->
+  <main>
+    <!-- ===========================================
+         HERO SECTION
+         ===========================================
+         Main banner with company tagline, CTA buttons, and background animation
+    -->
+    <section class="hero scroll-fade-in" role="banner">
+      <div class="container">
+        <div class="hero-content scroll-slide-up">
+          <h1>Innovating the Future of <span class="highlight">Technology</span></h1>
+          <p>Valance Tek delivers cutting-edge solutions for B2B and B2C clients, driving growth and efficiency through innovation.</p>
+          <div class="hero-buttons scroll-scale-in">
+            <a href="pages/services.html" class="btn" role="button">Explore Services</a>
+            <a href="pages/contact.html" class="btn btn-secondary" role="button">Get Free Consultation</a>
+          </div>
+        </div>
+      </div>
+      <!-- Horizontal Electricity Blink Effect -->
+      <div class="hero-electricity" aria-hidden="true"></div>
+    </section>
+
+    <!-- ===========================================
+         RANDOM SERVICES PREVIEW SECTION
+         ===========================================
+         Dynamic display of 3 random services from services page
+    -->
+    <section class="section random-services-section scroll-fade-in" id="random-services-section" style="opacity: 1 !important; visibility: visible !important;">
+      <div class="container">
+        <div class="section-header" style="opacity: 1 !important; visibility: visible !important;">
+          <h2 class="scroll-slide-up" style="opacity: 1 !important; visibility: visible !important;">Our Services</h2>
+          <p class="section-subtitle scroll-fade-in" style="opacity: 1 !important; visibility: visible !important;">Discover our comprehensive technology solutions</p>
+          <div class="section-accent scroll-scale-in" style="opacity: 1 !important; visibility: visible !important;"></div>
+        </div>
+        <div class="random-services-grid" id="random-services-grid" style="opacity: 1 !important; visibility: visible !important; display: grid !important;">
+          <!-- Random services will be populated by JavaScript -->
+          <div class="service-card" style="opacity: 1 !important; visibility: visible !important;">
+            <h3>Loading Services...</h3>
+            <p>Please wait while we load our featured services.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================================
+         NEWSLETTER SECTION
+         ===========================================
+         Email subscription form for lead generation and updates
+    -->
+    <section class="section newsletter-section scroll-fade-in">
+      <div class="container">
+        <div class="newsletter-content">
+          <div class="newsletter-text scroll-slide-left">
+            <h2 class="scroll-slide-up">Stay Updated</h2>
+            <p class="scroll-fade-in">Subscribe to our newsletter for the latest technology insights, industry trends, and exclusive updates from Valance Tek.</p>
+            <ul class="newsletter-benefits scroll-stagger">
+              <li class="scroll-slide-left">📧 Weekly technology insights</li>
+              <li class="scroll-scale-in">🚀 Exclusive project updates</li>
+              <li class="scroll-slide-right">💡 Industry best practices</li>
+              <li class="scroll-fade-in">🎯 Special offers and discounts</li>
+            </ul>
+          </div>
+          <div class="newsletter-form scroll-slide-right">
+            <form class="signup-form scroll-scale-in" action="process_form.php" method="post">
+              <h3 class="scroll-slide-up">Join Our Community</h3>
+              <div class="form-group scroll-fade-in">
+                <input type="text" id="newsletter-name" name="name" placeholder="Enter your full name" required>
+              </div>
+              <div class="form-group scroll-fade-in">
+                <input type="email" id="newsletter-email" name="email" placeholder="your.email@example.com" required>
+              </div>
+              <button type="submit" class="btn newsletter-btn scroll-scale-in">Subscribe Now</button>
+              <p class="privacy-note scroll-fade-in">We respect your privacy. Unsubscribe at any time.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================================
+         CONTACT SECTION
+         ===========================================
+         Contact information and lead generation form
+    -->
+    <section id="contact-section" class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="scroll-fade-in" role="region" aria-labelledby="contact-info-heading">
+            <h2 id="contact-info-heading" style="background: linear-gradient(135deg, #00c250 0%, #333 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">Get In Touch</h2>
+            <p style="font-size: 1.1rem; line-height: 1.6; color: #666; margin-bottom: 2rem;">Have a project in mind, a question about our services, or just want to say hello? We'd love to hear from you. Fill out the form, and our team will get back to you within 24 hours.</p>
+
+            <!-- Quick Stats -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+              <div class="scroll-fade-in" style="text-align: center; padding: 1rem; background: linear-gradient(135deg, rgba(0,194,80,0.1) 0%, rgba(0,160,64,0.05) 100%); border-radius: 12px; border: 1px solid rgba(0,194,80,0.2); animation-delay: 0.8s;">
+                <div style="font-size: 2rem; font-weight: 700; color: #00c250;">747+</div>
+                <div style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">Projects Completed</div>
+              </div>
+              <div class="scroll-fade-in" style="text-align: center; padding: 1rem; background: linear-gradient(135deg, rgba(0,194,80,0.1) 0%, rgba(0,160,64,0.05) 100%); border-radius: 12px; border: 1px solid rgba(0,194,80,0.2); animation-delay: 1s;">
+                <div style="font-size: 2rem; font-weight: 700; color: #00c250;">4.8/5</div>
+                <div style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">Client Satisfaction</div>
+              </div>
+              <div class="scroll-fade-in" style="text-align: center; padding: 1rem; background: linear-gradient(135deg, rgba(0,194,80,0.1) 0%, rgba(0,160,64,0.05) 100%); border-radius: 12px; border: 1px solid rgba(0,194,80,0.2); animation-delay: 1.2s;">
+                <div style="font-size: 1.5rem; font-weight: 700; color: #00c250;">Always</div>
+                <div style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">Available for Help</div>
+              </div>
+            </div>
+
+            <div class="contact-methods" role="list" aria-label="Contact methods">
+              <div role="listitem" class="contact-card scroll-fade-in" style="animation-delay: 0.2s;">
+                <div class="contact-icon">
+                  <i class="fa-solid fa-envelope" style="font-size: 2rem; color: #EA4335;"></i>
+                </div>
+                <div class="contact-content">
+                  <h3>Email us Directly</h3>
+                  <p><a href="mailto:contact@valancetek.com" aria-label="Send email to contact@valancetek.com">contact@valancetek.com</a></p>
+                </div>
+              </div>
+              <div role="listitem" class="contact-card scroll-fade-in" style="animation-delay: 0.4s;">
+                <div class="contact-icon">
+                  <span style="font-size: 2rem;">📞</span>
+                </div>
+                <div class="contact-content">
+                  <h3>Give Us a Call</h3>
+                  <p><a href="tel:+917428139556" aria-label="Call +91 74281 39556">+91 74281 39556</a></p>
+                </div>
+              </div>
+              <div role="listitem" class="contact-card scroll-fade-in whatsapp-card" style="animation-delay: 0.6s;">
+                <div class="contact-icon whatsapp-icon">
+                  <img src="assets/whatsapp_qr.jpg" alt="WhatsApp QR Code - Scan to chat with Valance Tek" class="whatsapp-qr-icon">
+                </div>
+                <div class="contact-content">
+                  <h3>WhatsApp Chat</h3>
+                  <p>Instant messaging for quick support</p>
+                  <div class="whatsapp-content">
+                    <div class="whatsapp-actions">
+                      <a href="https://wa.me/917428139556?text=Hi%20Valance%20Tek,%20I%20need%20help%20with..." class="whatsapp-btn" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-whatsapp btn-icon" style="color: white !important;"></i>
+                        <span class="btn-text">Start Chat</span>
+                      </a>
+                    </div>
+                    <div class="qr-label">
+                      Or scan to chat:
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Contact Form -->
+          <div class="scroll-fade-in" role="region" aria-labelledby="form-title">
+            <form action="process_form.php" method="post" class="contact-form hoverboard-form scroll-scale-in magnetic" role="form" aria-labelledby="form-title" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%); border-radius: 25px; padding: 3rem; box-shadow: 0 20px 60px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,194,80,0.1); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); position: relative; overflow: hidden;">
+              <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #00c250, #00a040, #008030); border-radius: 25px 25px 0 0;"></div>
+              <h3 id="form-title" style="color: #00c250; font-size: 1.8rem; font-weight: 700; margin-bottom: 2rem; text-align: center;">Send us a Message</h3>
+
+              <div class="form-group scroll-fade-in" style="animation-delay: 0.1s;">
+                <label for="full-name" style="color: #333; font-weight: 600; margin-bottom: 0.5rem; display: block;">Full Name</label>
+                <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required aria-required="true" style="width: 100%; border-radius: 12px; border: 2px solid #e9ecef; padding: 1.2rem; font-size: 1rem; transition: all 0.3s ease; background: rgba(255,255,255,0.8);">
+              </div>
+
+              <div class="form-group scroll-fade-in" style="animation-delay: 0.2s;">
+                <label for="email" style="color: #333; font-weight: 600; margin-bottom: 0.5rem; display: block;">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="your.email@example.com" required aria-required="true" style="width: 100%; border-radius: 12px; border: 2px solid #e9ecef; padding: 1.2rem; font-size: 1rem; transition: all 0.3s ease; background: rgba(255,255,255,0.8);">
+              </div>
+
+              <div class="form-group scroll-fade-in" style="animation-delay: 0.3s;">
+                <label for="mobile" style="color: #333; font-weight: 600; margin-bottom: 0.5rem; display: block;">Mobile No.</label>
+                <input type="tel" id="mobile" name="mobile" placeholder="+91 98765 43210" style="width: 100%; border-radius: 12px; border: 2px solid #e9ecef; padding: 1.2rem; font-size: 1rem; transition: all 0.3s ease; background: rgba(255,255,255,0.8);">
+              </div>
+
+              <div class="form-group scroll-fade-in" style="animation-delay: 0.4s;">
+                <label for="company" style="color: #333; font-weight: 600; margin-bottom: 0.5rem; display: block;">Company (Optional)</label>
+                <input type="text" id="company" name="company" placeholder="Your company name" style="width: 100%; border-radius: 12px; border: 2px solid #e9ecef; padding: 1.2rem; font-size: 1rem; transition: all 0.3s ease; background: rgba(255,255,255,0.8);">
+              </div>
+
+              <div class="form-group scroll-fade-in" style="animation-delay: 0.5s;">
+                <label for="message" style="color: #333; font-weight: 600; margin-bottom: 0.5rem; display: block;">Your Message</label>
+                <textarea id="message" name="message" placeholder="Tell us about your project or inquiry..." required aria-required="true" style="width: 100%; border-radius: 12px; border: 2px solid #e9ecef; padding: 1.2rem; font-size: 1rem; transition: all 0.3s ease; background: rgba(255,255,255,0.8); min-height: 120px; resize: vertical;"></textarea>
+              </div>
+
+              <button type="submit" class="btn scroll-scale-in magnetic" style="width: 100%; border-radius: 12px; padding: 1.2rem; font-size: 1.1rem; font-weight: 600; margin-top: 1rem; background: linear-gradient(135deg, #00c250 0%, #00a040 100%); border: none; color: white; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                <span style="position: relative; z-index: 2;">🚀 Send Message</span>
+                <div style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: left 0.5s ease;"></div>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================================
+         FAQ SECTION
+         ===========================================
+         Frequently asked questions with accordion functionality
+    -->
+    <section class="section faq-section scroll-fade-in">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="scroll-slide-up">Frequently Asked Questions</h2>
+          <p class="section-subtitle scroll-fade-in">Find answers to common questions about our services</p>
+          <div class="section-accent scroll-scale-in"></div>
+        </div>
+
+        <div class="faq-container">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-icon">💼</span>
+              <span>What services does Valance Tek offer?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We offer <strong>comprehensive technology solutions</strong> including:</p>
+              <ul>
+                <li><strong>Web Development</strong> - Custom websites and web applications</li>
+                <li><strong>Mobile Applications</strong> - iOS and Android app development</li>
+                <li><strong>Cloud Solutions</strong> - AWS, Azure, and cloud migration services</li>
+                <li><em>Digital Transformation Consulting</em> - Modernizing business processes</li>
+                <li><strong>UI/UX Design</strong> - User-centered design services</li>
+                <li><em>Technical Support</em> - 24/7 maintenance and support</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-icon">⏱️</span>
+              <span>How long does a typical project take?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <p><strong>Project timelines vary based on complexity and scope:</strong></p>
+              <ul>
+                <li><em>Simple websites:</em> 2-4 weeks</li>
+                <li><em>Complex web applications:</em> 6-12 weeks</li>
+                <li><em>Mobile applications:</em> 8-16 weeks</li>
+                <li><em>Enterprise solutions:</em> 3-6 months</li>
+              </ul>
+              <p><strong>We'll provide a detailed timeline during our initial consultation.</strong></p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-icon">🛠️</span>
+              <span>Do you provide ongoing maintenance and support?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <p><strong>Yes, we offer comprehensive maintenance and support packages that include:</strong></p>
+              <ul>
+                <li><em>Regular updates</em> and security patches</li>
+                <li><strong>24/7 monitoring</strong> and performance optimization</li>
+                <li><em>Technical support</em> via multiple channels</li>
+                <li><strong>Backup and recovery</strong> solutions</li>
+              </ul>
+              <p>This ensures your solution remains <strong>current, secure, and high-performing</strong>.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-icon">🔄</span>
+              <span>What is your development process?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <p><strong>Our proven 5-step development process:</strong></p>
+              <ol>
+                <li><strong>1. Discovery & Planning</strong> - Understanding your requirements</li>
+                <li><strong>2. Design & Prototyping</strong> - Creating wireframes and mockups</li>
+                <li><strong>3. Development & Testing</strong> - Building with quality assurance</li>
+                <li><strong>4. Deployment & Launch</strong> - Going live with monitoring</li>
+                <li><strong>5. Maintenance & Support</strong> - Ongoing optimization</li>
+              </ol>
+              <p>We follow <em>agile methodologies</em> and keep you updated throughout the entire process.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-icon">🌍</span>
+              <span>Do you work with international clients?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <p><strong>Absolutely! We work with clients worldwide</strong> and have extensive experience with international projects.</p>
+              <ul>
+                <li><em>Global time zone management</em></li>
+                <li><strong>Multiple communication channels</strong> (Zoom, Slack, email)</li>
+                <li><em>Various project management tools</em> (Jira, Trello, Asana)</li>
+                <li><strong>Cultural sensitivity</strong> and local market understanding</li>
+              </ul>
+              <p>We're here to make international collaboration <strong>seamless and productive</strong>.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-icon">⚡</span>
+              <span>What technologies do you specialize in?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <p><strong>We specialize in modern, cutting-edge technologies:</strong></p>
+              <div class="tech-categories">
+                <div class="tech-category">
+                  <h4><strong>Frontend:</strong></h4>
+                  <p>React, Vue.js, Angular, HTML5, CSS3, JavaScript/TypeScript</p>
+                </div>
+                <div class="tech-category">
+                  <h4><strong>Backend:</strong></h4>
+                  <p>Node.js, Python, PHP, Java, .NET</p>
+                </div>
+                <div class="tech-category">
+                  <h4><strong>Cloud Platforms:</strong></h4>
+                  <p><em>AWS, Azure, Google Cloud, DigitalOcean</em></p>
+                </div>
+                <div class="tech-category">
+                  <h4><strong>Mobile:</strong></h4>
+                  <p>React Native, Flutter, Swift, Kotlin</p>
+                </div>
+                <div class="tech-category">
+                  <h4><strong>Databases:</strong></h4>
+                  <p>MongoDB, PostgreSQL, MySQL, Redis</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===========================================
+         SITE FOOTER
+         ===========================================
+         Dynamic footer loaded via JavaScript for consistency across all pages
+    -->
+   <div id="dynamic-footer-placeholder" style="display: none;"></div>
+
+
+
+  <!-- ===========================================
+       BACK TO TOP BUTTON
+       ===========================================
+       Scroll-to-top functionality for better user experience
+  -->
+
+  <!-- ===========================================
+       TELEGRAM FLOATING BUTTON
+       ===========================================
+       Quick contact button for Telegram messaging
+  -->
+
+  <!-- ===========================================
+        JAVASCRIPT INCLUDES
+        ===========================================
+        Main application scripts loaded with defer for performance
+   -->
+   <script src="js/main.js" defer></script>
+
+  <!-- ===========================================
+        WHATSAPP FLOATING BUTTON
+        ===========================================
+        Quick contact button for instant messaging
+   -->
+</body>
+</html>
